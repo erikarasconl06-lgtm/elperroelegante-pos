@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Perro Elegante POS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login" id="login">
+  <h2>El Perro Elegante</h2>
+  <p>Ingresa tu PIN</p>
+  <input type="password" maxlength="4" id="pinInput">
+</div>
+
+<header>🌭 El Perro Elegante</header>
+
+<div class="container">
+  <div class="grid">
+    <button onclick="add(55)">Hot Dog Sencillo $55</button>
+    <button onclick="add(65)">Doble Wini $65</button>
+    <button onclick="add(70)">Spacy Gordo Cholo $70</button>
+    <button onclick="add(70)">Dogo Yupi $70</button>
+    <button onclick="add(30)">Refresco $30</button>
+    <button onclick="add(25)">Chile $25</button>
+  </div>
+
+  <div class="total">
+    Total: $<span id="total">0</span>
+  </div>
+
+  <div class="pay">
+    <button class="cash" onclick="pay('Efectivo')">Efectivo</button>
+    <button class="card" onclick="pay('Terminal')">Terminal</button>
+  </div>
+
+  <br>
+  <button class="clear" onclick="clearOrder()">Cancelar Venta</button>
+</div>
+
+<script>
+let total = 0;
+const correctPin = "1234";
+document.getElementById("pinInput").addEventListener("input", function(){
+  if(this.value === correctPin){
+    document.getElementById("login").style.display="none";
+  }
+});
+function add(price){ total += price; document.getElementById("total").innerText = total; }
+function pay(method){ if(total === 0){ alert("No hay venta"); return; } alert("Venta cobrada en " + method + " por $" + total); total = 0; document.getElementById("total").innerText = total; }
+function clearOrder(){ total = 0; document.getElementById("total").innerText = total; }
+</script>
+
+</body>
+</html>

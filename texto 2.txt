@@ -1,0 +1,13 @@
+body{ margin:0; font-family:Arial,sans-serif; background:#111; color:white; }
+header{ background:#d9534f; padding:15px; text-align:center; font-size:22px; font-weight:bold; }
+.container{ padding:15px; }
+.grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+button{ padding:20px; font-size:16px; border:none; border-radius:12px; background:#222; color:white; cursor:pointer; }
+button:active{ transform:scale(0.95); }
+.total{ font-size:24px; margin:15px 0; text-align:center; }
+.pay{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.clear{ background:#8b0000; }
+.cash{ background:#006400; }
+.card{ background:#003366; }
+.login{ position:fixed; inset:0; background:black; display:flex; justify-content:center; align-items:center; flex-direction:column; }
+input{ padding:15px; font-size:20px; text-align:center; border-radius:10px; border:none; }
